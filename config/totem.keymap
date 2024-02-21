@@ -122,10 +122,10 @@
 
         base_thumb_mods {
             bindings = <
-                &kp Q  &kp W  &kp E      &kp R         &kp T          &kp Y        &kp U               &kp I      &kp O       &kp P
-                &kp A  &kp S  &kp D      &kp F         &kp G          &kp H        &kp J               &kp K      &kp L       &kp SEMICOLON
-&mt LSHIFT TAB  &kp Z  &kp X  &kp C      &kp V         &kp B          &kp N        &kp M               &kp COMMA  &kp PERIOD  &kp SLASH      &mt RIGHT_SHIFT ENTER
-                              &kp LCTRL  &mt LGUI TAB  &lt 3 SPACE    &lt 2 SPACE  &mt RCTRL KP_ENTER  &kp LALT
+                &kp Q  &kp W  &kp E      &kp R         &kp T          &kp Y        &kp U            &kp I      &kp O       &kp P
+                &kp A  &kp S  &kp D      &kp F         &kp G          &kp H        &kp J            &kp K      &kp L       &kp SEMICOLON
+&mt LSHIFT TAB  &kp Z  &kp X  &kp C      &kp V         &kp B          &kp N        &kp M            &kp COMMA  &kp PERIOD  &kp SLASH      &mt RIGHT_SHIFT ENTER
+                              &kp LCTRL  &mt LGUI TAB  &lt 3 SPACE    &lt 2 SPACE  &mt RCTRL ENTER  &kp LALT
             >;
         };
 
