@@ -45,18 +45,6 @@
             layers = <0>;
         };
 
-        enable_hrm {
-            bindings = <&to 1>;
-            key-positions = <11 12 10 13 16 17 18 19>;
-            layers = <0>;
-        };
-
-        enable_thumb_mods {
-            bindings = <&to 0>;
-            key-positions = <11 12 10 13 16 17 18 19>;
-            layers = <1>;
-        };
-
         thumbs_enter {
             bindings = <&kp ENTER>;
             key-positions = <34 35>;
@@ -68,10 +56,12 @@
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <240>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+
+            require-prior-idle-ms = <125>;
         };
 
         lh_pht: left_positional_hold_tap {
@@ -132,34 +122,10 @@
 
         base_thumb_mods {
             bindings = <
-                &qgt   &kp W  &kp E      &kp R               &kp T          &kp Y        &kp U                &kp I      &kp O       &kp P
-                &kp A  &kp S  &kp D      &kp F               &kp G          &kp H        &kp J                &kp K      &kp L       &kp SEMICOLON
-&mt LSHIFT TAB  &kp Z  &kp X  &kp C      &kp V               &kp B          &kp N        &kp M                &kp COMMA  &kp PERIOD  &kp SLASH      &mt RIGHT_SHIFT ENTER
-                              &kp LCTRL  &mt LGUI BACKSPACE  &lt 3 SPACE    &lt 2 SPACE  &mt RCTRL BACKSPACE  &kp LALT
-            >;
-        };
-
-        base_layer_hrm {
-            // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-
-            label = "BASE_HRM";
-
-            // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-            //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            //             ┃     Q     ┃     W     ┃     F     ┃     P     ┃     G     ┃   ┃     J     ┃     L     ┃     U     ┃     Y     ┃     ;     ┃
-            //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-            //             ┃     A     ┃     R     ┃     S     ┃     T     ┃     D     ┃   ┃     H     ┃     N     ┃     E     ┃     I     ┃     O     ┃
-            // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-            // ┃     Q     ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     K     ┃     M     ┃     ,     ┃     .     ┃     /     ┃     \     ┃
-            // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-            //                                     ┃    DEL    ┃    TAB    ┃    SPC    ┃   ┃   ENTER   ┃           ┃   BSPC    ┃
-            //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-
-            bindings = <
-            &kp Q           &kp W             &kp E               &kp R            &kp T        &kp Y    &kp U            &kp I            &kp O                  &kp P
-            &lh_pht LCMD A  &lh_pht LSHIFT S  &lh_pht LEFT_ALT D  &lh_pht LCTRL F  &kp G        &kp H    &rh_pht RCTRL J  &rh_pht RSHFT K  &rh_pht RIGHT_SHIFT L  &rh_pht RWIN SEMICOLON
-&kp LSHIFT  &kp Z           &kp X             &kp C               &kp V            &kp B        &kp N    &kp M            &kp COMMA        &kp DOT                &kp FSLH                &kp BSLH
-                                              &kp DEL             &lt 2 TAB        &kp SPACE    &kp RET  &lt 3 BACKSPACE  &kp ESCAPE
+                &qgt         &kp W       &kp E       &kp R               &kp T          &kp Y        &kp U                &kp I       &kp O           &kp P
+                &hm LCTRL A  &hm LALT S  &hm LGUI D  &hm LSHFT F         &kp G          &kp H        &hm RSHFT J          &hm RGUI K  &hm LEFT_ALT L  &hm RCTRL SEMICOLON
+&mt LSHIFT TAB  &kp Z        &kp X       &kp C       &kp V               &kp B          &kp N        &kp M                &kp COMMA   &kp PERIOD      &kp SLASH            &mt RIGHT_SHIFT ENTER
+                                         &kp LCTRL   &mt LGUI BACKSPACE  &lt 2 SPACE    &lt 1 SPACE  &mt RCTRL BACKSPACE  &kp LALT
             >;
         };
 
@@ -183,7 +149,7 @@
          &kp ESC    &trans  &trans  &trans  &trans    &trans  &trans    &kp HOME      &kp END        &kp BACKSPACE
          &kp LSHFT  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp UP_ARROW  &kp DOWN       &kp RIGHT
 &kp TAB  &kp DEL    &trans  &trans  &trans  &trans    &trans  &trans    &kp PAGE_UP   &kp PAGE_DOWN  &trans         &kp LC(LS(MINUS))
-                            &trans  &trans  &mo 4     &trans  &trans    &trans
+                            &trans  &trans  &mo 3     &trans  &trans    &trans
             >;
         };
 
@@ -207,7 +173,7 @@
            &kp DOLLAR   &kp EXCLAMATION  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE    &kp AMPERSAND  &kp KP_N7        &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_EQUAL
            &kp PERCENT  &kp AT_SIGN      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PLUS    &kp MINUS      &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp SQT
 &kp LSHFT  &kp CARET    &kp HASH         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp STAR    &kp SLASH      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp BSLH      &kp RSHIFT
-                                         &trans                &trans                 &mo 4       &kp ENTER      &kp GRAVE        &kp KP_NUMBER_0
+                                         &trans                &trans                 &mo 3       &kp ENTER      &kp GRAVE        &kp KP_NUMBER_0
             >;
         };
 
