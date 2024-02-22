@@ -146,10 +146,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-         &kp ESC    &trans  &trans  &trans  &trans    &trans  &trans    &kp HOME      &kp END        &kp BACKSPACE
-         &kp LSHFT  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp UP_ARROW  &kp DOWN       &kp RIGHT
-&kp TAB  &kp DEL    &trans  &trans  &trans  &trans    &trans  &trans    &kp PAGE_UP   &kp PAGE_DOWN  &trans         &kp LC(LS(MINUS))
-                            &trans  &trans  &mo 3     &trans  &trans    &trans
+         &kp ESC    &trans  &trans  &trans  &kp K_PLAY_PAUSE    &trans  &trans    &kp HOME      &kp END        &kp BACKSPACE
+         &kp LSHFT  &trans  &trans  &trans  &trans              &trans  &kp LEFT  &kp UP_ARROW  &kp DOWN       &kp RIGHT
+&kp TAB  &kp DEL    &trans  &trans  &trans  &trans              &trans  &trans    &kp PAGE_UP   &kp PAGE_DOWN  &trans         &kp LC(LS(MINUS))
+                            &trans  &trans  &mo 3               &trans  &trans    &trans
             >;
         };
 
