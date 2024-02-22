@@ -96,6 +96,16 @@
             label = "RH_PHT";
             hold-trigger-key-positions = <16 17 18 19 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 32 33 32 33 34>;
         };
+
+        qgt: qgt {
+            compatible = "zmk,behavior-mod-morph";
+            label = "q_to_gui_tab";
+            bindings = <&kp Q>, <&kp TAB>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+            keep-mods = <(MOD_LGUI)>;
+        };
     };
 
     macros {
@@ -122,7 +132,7 @@
 
         base_thumb_mods {
             bindings = <
-                &kp Q  &kp W  &kp E      &kp R         &kp T          &kp Y        &kp U                &kp I      &kp O       &kp P
+                &qgt   &kp W  &kp E      &kp R         &kp T          &kp Y        &kp U                &kp I      &kp O       &kp P
                 &kp A  &kp S  &kp D      &kp F         &kp G          &kp H        &kp J                &kp K      &kp L       &kp SEMICOLON
 &mt LSHIFT TAB  &kp Z  &kp X  &kp C      &kp V         &kp B          &kp N        &kp M                &kp COMMA  &kp PERIOD  &kp SLASH      &mt RIGHT_SHIFT ENTER
                               &kp LCTRL  &mt LGUI TAB  &lt 3 SPACE    &lt 2 SPACE  &mt RCTRL BACKSPACE  &kp LALT
